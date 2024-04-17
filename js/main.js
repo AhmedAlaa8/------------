@@ -16,30 +16,6 @@ $(document).ready(function () {
 
 	(function ($) {
 
-		let b = (class_place, text, index, intrv) => {
-
-			$(class_place).append(text[index++])
-
-			let vv = setTimeout(() => {
-
-				b(class_place, text, index, intrv)
-
-			}, intrv);
-
-
-
-
-			if (text.length == index + 1) {
-
-				console.log("It's Over");
-				clearTimeout(vv);
-
-			}
-
-		};
-
-		b(".Sub-address", "نحن فرييق متكامل الهدف الاول والاساسي هوا راحه العميل ورضائه ", 0, 40)
-
 
 		$.fn.parallax = function (options) {
 
