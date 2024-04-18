@@ -12,72 +12,74 @@ $(document).ready(function () {
 	 *
 	 */
 
+	let b = (class_place, text, index, intrv) => {
 
+		$(class_place).append(text[index++])
 
-	(function ($) {
+		let vv = setTimeout(() => {
 
-		let b = (class_place, text, index, intrv) => {
+			b(class_place, text, index, intrv)
 
-			$(class_place).append(text[index++])
+		}, intrv);
 
-			let vv = setTimeout(() => {
+		if (text.length == index + 1) {
 
-				b(class_place, text, index, intrv)
+			clearTimeout(vv);
 
-			}, intrv);
-
-			if (text.length == index + 1) {
-
-				clearTimeout(vv);
-
-			}
-
-		};
-
-		b(".Sub-address", "نحن فرييق متكامل الهدف الاول والاساسي هوا راحه العميل ورضائه ", 0, 40)
-
-
-		$.fn.parallax = function (options) {
-
-			var windowHeight = $(window).height();
-
-			// Establish default settings
-			var settings = $.extend({
-				speed: 0.15
-			}, options);
-
-			// Iterate over each object in collection
-			return this.each(function () {
-
-				// Save a reference to the element
-				var $this = $(this);
-
-				// Set up Scroll Handler
-				$(document).scroll(function () {
-
-					var scrollTop = $(window).scrollTop();
-					var offset = $this.offset().top;
-					var height = $this.outerHeight();
-
-					// Check if above or below viewport
-					if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
-						return;
-					}
-
-					var yBgPosition = Math.round((offset - scrollTop) * settings.speed);
-
-					// Apply the Y Background Position to Set the Parallax Effect
-					$this.css('background-position', 'center ' + yBgPosition + 'px');
-
-				});
-			});
 		}
-	}(jQuery));
 
-	//Loader
-	$(window).load(function () {
-		$(".loader-overlay").fadeOut("slow");
-	})
+	};
+
+	b(".Sub-address", "نحن فرييق متكامل الهدف الاول والاساسي هوا راحه العميل ورضائه ", 0, 40)
+
+
+
+	// (function ($) {
+
+
+
+	// 	$.fn.parallax = function (options) {
+
+	// 		var windowHeight = $(window).height();
+
+	// 		// Establish default settings
+	// 		var settings = $.extend({
+	// 			speed: 0.15
+	// 		}, options);
+
+	// 		// Iterate over each object in collection
+	// 		return this.each(function () {
+
+	// 			// Save a reference to the element
+	// 			var $this = $(this);
+
+	// 			// Set up Scroll Handler
+	// 			$(document).scroll(function () {
+
+	// 				var scrollTop = $(window).scrollTop();
+	// 				var offset = $this.offset().top;
+	// 				var height = $this.outerHeight();
+
+	// 				// Check if above or below viewport
+	// 				if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+	// 					return;
+	// 				}
+
+	// 				var yBgPosition = Math.round((offset - scrollTop) * settings.speed);
+
+	// 				// Apply the Y Background Position to Set the Parallax Effect
+	// 				$this.css('background-position', 'center ' + yBgPosition + 'px');
+
+	// 			});
+	// 		});
+	// 	}
+	// }(jQuery));
+
+	// Loader
+	// $(window).load(function () {
+	// 	$(".loader-overlay").fadeOut("slow");
+	// })
+	$(".loader-overlay").fadeOut("slow");
 
 	//Counter
 	$('.counter').counterUp({
