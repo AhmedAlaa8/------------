@@ -74,10 +74,10 @@ $(document).ready(function () {
 	}(jQuery));
 
 	// Loader
-	$(window).load(function () {
-		$(".loader-overlay").fadeOut("slow");
-	})
-	// $(".loader-overlay").fadeOut("slow");
+	// $(window).load(function () {
+	// 	$(".loader-overlay").fadeOut("slow");
+	// })
+	$(".loader-overlay").fadeOut("slow");
 
 	//Counter
 	$('.counter').counterUp({
