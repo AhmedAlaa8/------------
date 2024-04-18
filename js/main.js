@@ -12,31 +12,32 @@ $(document).ready(function () {
 	 *
 	 */
 
-	// let b = (class_place, text, index, intrv) => {
-
-	// 	$(class_place).append(text[index++])
-
-	// 	let vv = setTimeout(() => {
-
-	// 		b(class_place, text, index, intrv)
-
-	// 	}, intrv);
-
-	// 	if (text.length == index + 1) {
-
-	// 		clearTimeout(vv);
-
-	// 	}
-
-	// };
-
-	// b(".Sub-address", "نحن فرييق متكامل الهدف الاول والاساسي هوا راحه العميل ورضائه ", 0, 40)
 
 
 
 	(function ($) {
 
 		$.fn.parallax = function (options) {
+			let b = (class_place, text, index, intrv) => {
+
+				$(class_place).append(text[index++])
+
+				let vv = setTimeout(() => {
+
+					b(class_place, text, index, intrv)
+
+				}, intrv);
+
+				if (text.length == index + 1) {
+
+					clearTimeout(vv);
+
+				}
+
+			};
+
+			b(".Sub-address", "نحن فرييق متكامل الهدف الاول والاساسي هوا راحه العميل ورضائه ", 0, 40)
+
 
 			var windowHeight = $(window).height();
 
